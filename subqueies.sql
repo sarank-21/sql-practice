@@ -6,6 +6,9 @@ create DATABASE quries;
     salary decimal(10,2),
     hire_date date
  );
+drop table employees
+
+ drop table departments
 
 create table departments (
     dept_id int,

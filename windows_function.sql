@@ -133,6 +133,23 @@ FROM employees;
 
 -- ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING
 
+
+-- Breakdown:
+
+UNBOUNDED PRECEDING
+
+-- : Means: Start of the window = very first row in the partition.
+
+-- CURRENT ROW : Means: End of the window = the row being processed right now (default behavior).
+
+-- So LAST_VALUE() with default gives “last value so far”.
+
+UNBOUNDED FOLLOWING:
+
+--  Means: End of the window = very last row in the partition.
+
+-- So now, LAST_VALUE() sees the entire partition → giving the true last value.
+
 --    This expands the frame to include all rows in the partition (from first to last row)
 
 # 4. 4. Distribution Functions
