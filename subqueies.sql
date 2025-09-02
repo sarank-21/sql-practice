@@ -43,7 +43,7 @@ where salary> (select avg(salary) from employees)
 
 --multi row subquery using IN 
 select * from employees 
-where dept_id in (select dept_id from departments where dept_name = 'HR' );
+where dept_id in (select dept_id from departments where location= 'New York' );
 
 -- multi row subqureyusing ALL
 select * from employees 
@@ -51,7 +51,7 @@ where salary > ALL  (select salary from employees where dept_id =1 ); -- max
 
 -- multi row subqureyusing ANY
 select * from employees 
-where salary > ANY  (select salary from employees where dept_id =2); -- min 
+where salary > ANY  (select salary from employees where dept_id =1); -- min 
 
 --correlated subquery
 select e1.emp_id, e1.salary from employees as e1
